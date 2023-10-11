@@ -13,6 +13,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
+    var logName = Scence.getUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,12 @@ final class LoginViewController: UIViewController {
     
     //MARK: - Передаем имя пользователя между экранами
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.logName = userNameTextField.text
+        let tabBarController = segue.destination as? UITabBarController
+        tabBarController?.viewControllers?.forEach { viewController in
+            if let welcomVC = viewController as? WelcomeViewController{
+                welcomVC.user = logName
+            }
+        }
     }
     
     //MARK: - скрыть клавиатуру
@@ -31,13 +36,10 @@ final class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    //MARK: - задаем данные для входа
-    let user = "User"
-    let password = "Password"
-    
+    private let user = Scence.getUser()
     //MARK: - Валидируем данные пользовательского ввода
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == user, passwordTextField.text == password else {
+        guard userNameTextField.text == user.nameUser, passwordTextField.text == user.password else {
             showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
             return false
         }
@@ -46,11 +48,11 @@ final class LoginViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func forgotUserNameButtonAction() {
-        showAlert(with: "Oops!", and: "Your name is \(user) 😉")
+        showAlert(with: "Oops!", and: "Your name is \(user.nameUser) 😉")
     }
     
     @IBAction func forgotPasswordButtonAction() {
-        showAlert(with: "Oops!", and: "Your password is \(password) 😉")
+        showAlert(with: "Oops!", and: "Your password is \(user.password) 😉")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue){
@@ -60,7 +62,7 @@ final class LoginViewController: UIViewController {
 }
 //MARK: - UIAlertController
 extension LoginViewController {
-    private func showAlert(with title: String, and message: String ){
+    private func showAlert(with title: String, and message: String, textField: UITextField? = nil ){
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in self.passwordTextField.text = "" }
         let alert = UIAlertController(
             title: title,

@@ -14,6 +14,9 @@
 		CE243D152AD0548600F51FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE243D142AD0548600F51FCE /* Assets.xcassets */; };
 		CE243D182AD0548600F51FCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE243D162AD0548600F51FCE /* LaunchScreen.storyboard */; };
 		CE243D202AD0642300F51FCE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE243D1F2AD0642300F51FCE /* WelcomeViewController.swift */; };
+		CE2C65DB2AD5B35000728A8E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C65DA2AD5B34F00728A8E /* PersonViewController.swift */; };
+		CE2C65DD2AD5CDCE00728A8E /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C65DC2AD5CDCE00728A8E /* BioViewController.swift */; };
+		CE2C65DF2AD6EA0700728A8E /* scence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C65DE2AD6EA0700728A8E /* scence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		CE243D172AD0548600F51FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE243D192AD0548600F51FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE243D1F2AD0642300F51FCE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CE2C65DA2AD5B34F00728A8E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		CE2C65DC2AD5CDCE00728A8E /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
+		CE2C65DE2AD6EA0700728A8E /* scence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,10 @@
 				CE243D0D2AD0548500F51FCE /* SceneDelegate.swift */,
 				CE243D0F2AD0548500F51FCE /* LoginViewController.swift */,
 				CE243D1F2AD0642300F51FCE /* WelcomeViewController.swift */,
+				CE2C65DA2AD5B34F00728A8E /* PersonViewController.swift */,
+				CE2C65DC2AD5CDCE00728A8E /* BioViewController.swift */,
 				CE243D112AD0548500F51FCE /* Main.storyboard */,
+				CE2C65DE2AD6EA0700728A8E /* scence.swift */,
 				CE243D142AD0548600F51FCE /* Assets.xcassets */,
 				CE243D162AD0548600F51FCE /* LaunchScreen.storyboard */,
 				CE243D192AD0548600F51FCE /* Info.plist */,
@@ -141,10 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2C65DF2AD6EA0700728A8E /* scence.swift in Sources */,
+				CE2C65DB2AD5B35000728A8E /* PersonViewController.swift in Sources */,
 				CE243D102AD0548500F51FCE /* LoginViewController.swift in Sources */,
 				CE243D202AD0642300F51FCE /* WelcomeViewController.swift in Sources */,
 				CE243D0C2AD0548500F51FCE /* AppDelegate.swift in Sources */,
 				CE243D0E2AD0548500F51FCE /* SceneDelegate.swift in Sources */,
+				CE2C65DD2AD5CDCE00728A8E /* BioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
