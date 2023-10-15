@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     
     var user: User!
@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.items?.last?.title = user.person.fullName
-
+        sendingData()
     }
     private func sendingData(){
         guard let viewControllers else { return }

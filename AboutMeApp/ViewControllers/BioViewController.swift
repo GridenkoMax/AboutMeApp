@@ -7,16 +7,19 @@
 
 import UIKit
 
-class BioViewController: UIViewController {
+final class BioViewController: UIViewController {
 
     
 
     @IBOutlet weak var bioLabel: UILabel!
     
     
-    var user: User!
+     var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bioLabel.text = user.person.bio
+        view.gradient()
     }
 }
+

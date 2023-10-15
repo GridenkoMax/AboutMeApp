@@ -7,9 +7,11 @@
 
 import UIKit
 
-class UserInfoViewController: UIViewController {
+final class UserInfoViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var imageView: UIImageView! {
+        didSet { imageView.layer.cornerRadius = imageView.frame.height / 2 }
+    }
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
@@ -17,9 +19,10 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var departamentLabel: UILabel!
     @IBOutlet weak var jobTitleLabel: UILabel!
     
-    var user: User!
+    @IBOutlet weak var userNavigationBarLabel: UINavigationItem!
+     var user: User!
     
-    var name: String!
+   private var name: String!
     var surname: String!
     var company: String!
     var departament: String!
@@ -28,6 +31,22 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.gradient()
+        imageView.image = UIImage(named: user.person.photo)
+        
+        nameLabel.text = user.person.name
+        surnameLabel.text = user.person.surname
+        companyLabel.text = user.person.company
+        departamentLabel.text = user.person.departament
+        jobTitleLabel.text = user.person.jobTitle
+        userNavigationBarLabel.title = user.person.fullName
+        
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let bioVC = segue.destination as? BioViewController else { return }
+        bioVC.user = user
     }
 }
+
+

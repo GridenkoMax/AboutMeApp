@@ -16,12 +16,12 @@ final class LoginViewController: UIViewController {
   
     
     //MARK: - задаем данные для входа
-    private let user = User.person()
-    private let password = User.person()
+    private let user = User.user()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
+        view.gradient()
     
     }
     
@@ -38,7 +38,7 @@ final class LoginViewController: UIViewController {
     }
     //MARK: - Валидируем данные пользовательского ввода
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == user.login, passwordTextField.text == password.password else {
+        guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
             showAlert(
                 with: "Invalid login or password",
                 and: "Please, enter correct login and password"
@@ -50,11 +50,11 @@ final class LoginViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func forgotUserNameButtonAction() {
-        showAlert(with: "Oops!", and: "Your name is \(user) 😉")
+        showAlert(with: "Oops!", and: "Your name is \(user.login) 😉")
     }
     
     @IBAction func forgotPasswordButtonAction() {
-        showAlert(with: "Oops!", and: "Your password is \(password) 😉")
+        showAlert(with: "Oops!", and: "Your password is \(user.password) 😉")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue){
