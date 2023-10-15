@@ -13,20 +13,22 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
+  
     
     //MARK: - задаем данные для входа
-   private let user = "1"
-   private let password = "1"
+    private let user = User.person()
+    private let password = User.person()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
+    
     }
     
-    //MARK: - Передаем имя пользователя между экранами
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.user = user
+        guard let tabBarController = segue.destination as? TabBarViewController else { return }
+        tabBarController.user = user
+        
     }
     
     //MARK: - скрыть клавиатуру
@@ -36,7 +38,7 @@ final class LoginViewController: UIViewController {
     }
     //MARK: - Валидируем данные пользовательского ввода
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == user, passwordTextField.text == password else {
+        guard userNameTextField.text == user.login, passwordTextField.text == password.password else {
             showAlert(
                 with: "Invalid login or password",
                 and: "Please, enter correct login and password"

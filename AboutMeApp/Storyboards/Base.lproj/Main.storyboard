@@ -147,12 +147,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjp-UA-1Yl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="e9i-dc-cZ2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="879" y="813"/>
+            <point key="canvasLocation" x="499" y="800"/>
         </scene>
         <!--User-->
         <scene sceneID="Bq6-uM-cZz">
             <objects>
-                <viewController id="pA6-g6-mV9" sceneMemberID="viewController">
+                <viewController id="pA6-g6-mV9" customClass="UserInfoViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8z-TK-KvL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,15 +272,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="companyLabel" destination="x9a-yj-KOq" id="k3N-Oi-8h3"/>
+                        <outlet property="departamentLabel" destination="kLy-W0-LLT" id="K60-tk-yC2"/>
+                        <outlet property="imageView" destination="KVl-ws-P2b" id="NI9-TJ-wG7"/>
+                        <outlet property="jobTitleLabel" destination="Ifl-Dz-AJw" id="lMe-7Z-UYv"/>
+                        <outlet property="nameLabel" destination="RxI-HC-ddL" id="vIS-SE-xVS"/>
+                        <outlet property="surnameLabel" destination="Bp9-oR-H1x" id="JLr-QI-2t3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jB-oG-Xgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.75" y="811.26760563380287"/>
+            <point key="canvasLocation" x="2364" y="800"/>
         </scene>
-        <!--View Controller-->
+        <!--Bio View Controller-->
         <scene sceneID="jtV-wV-rdG">
             <objects>
-                <viewController id="GL2-Lp-Na8" sceneMemberID="viewController">
+                <viewController id="GL2-Lp-Na8" customClass="BioViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ObE-gW-JZ5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,15 +311,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jiJ-Hh-kcg"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="tH8-7z-mIK" id="aiL-G6-uvc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ta-9Z-pNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3337.5" y="811.26760563380287"/>
+            <point key="canvasLocation" x="3231" y="800"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="7Z4-1O-WYT">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zzA-Yk-zXy" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zzA-Yk-zXy" customClass="TabBarViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oFp-8T-ReK">
                         <autoresizingMask key="autoresizingMask"/>
@@ -343,7 +354,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xg-hs-743" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="811"/>
+            <point key="canvasLocation" x="1404" y="800"/>
         </scene>
     </scenes>
     <resources>

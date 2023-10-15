@@ -11,15 +11,16 @@ final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var loginName: UILabel!
     
-    var user: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginName.text = user
-
+        loginName.text = user.person.fullName
+        
         gradient()
     }
 }
+
 //MARK: - создание градиента для WelcomeViewController
 extension WelcomeViewController{
     private func gradient(){
