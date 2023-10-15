@@ -14,6 +14,10 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+    //MARK: - задаем данные для входа
+   private let user = "1"
+   private let password = "1"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
@@ -22,7 +26,7 @@ final class LoginViewController: UIViewController {
     //MARK: - Передаем имя пользователя между экранами
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.logName = userNameTextField.text
+        welcomeVC.user = user
     }
     
     //MARK: - скрыть клавиатуру
@@ -30,15 +34,13 @@ final class LoginViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-    
-    //MARK: - задаем данные для входа
-    let user = "User"
-    let password = "Password"
-    
     //MARK: - Валидируем данные пользовательского ввода
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard userNameTextField.text == user, passwordTextField.text == password else {
-            showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
+            showAlert(
+                with: "Invalid login or password",
+                and: "Please, enter correct login and password"
+            )
             return false
         }
         return true

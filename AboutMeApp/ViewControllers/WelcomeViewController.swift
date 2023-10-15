@@ -11,11 +11,11 @@ final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var loginName: UILabel!
     
-    var logName: String!
+    var user: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginName.text = logName
+        loginName.text = user
 
         gradient()
     }
